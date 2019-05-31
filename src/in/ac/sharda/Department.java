@@ -3,7 +3,7 @@ package in.ac.sharda;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Department implements Comparable<Department> {
+public class Department implements Comparable<Department>, IResultArrivedListener {
 	private List<Student> list=new ArrayList<>();
 	private final int id;
 	public Department(int id) {
@@ -29,6 +29,14 @@ public class Department implements Comparable<Department> {
 	}
 	public int compareTo(Department o) {
 		return o.getId() -id;
+	}
+	
+//	public void resultDeclared() {
+//		System.out.println("Result is Arrived");
+//	}
+	@Override
+	public void resultArrived() {
+		list.parallelStream().forEach(s -> s.resultArrived());
 	}
 	
 

@@ -1,6 +1,6 @@
 package in.ac.sharda;
 
-public class Student {
+public class Student implements IResultArrivedListener{
 	
 	private final int rollnumber;
 	private final String name;
@@ -33,6 +33,10 @@ public class Student {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+//	public void resultArrived() {
+//		System.out.println("Result Just Came In");
+//	}
 	@Override
 	public boolean equals(Object obj) {
 		
@@ -44,6 +48,41 @@ public class Student {
 	}
 //	public void setRollnumber(int rn) {
 //		this.rollnumber = rn;
+//	}
+//@Override
+//public void resultArrived() {
+//	// TODO Auto-generated method stub
+//	
+//}
+//	@Override
+//	public void resultArrived() {
+//		// TODO Auto-generated method stub
+@Override
+public void resultArrived() {
+	System.out.println("Hey result is out - go checkc it"+name);
+	
+}
+		
+//	}
+//	@Override
+//	public void resultArrived1() {
+//		// TODO Auto-generated method stub
+//		
+//	}
+//	@Override
+//	public void resultArrived2() {
+//		// TODO Auto-generated method stub
+//		
+//	}
+//	@Override
+//	public void resultArrived3() {
+//		// TODO Auto-generated method stub
+//		
+//	}
+//	@Override
+//	public void resultArrived4() {
+//		// TODO Auto-generated method stub
+//		
 //	}
 
 }
